@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .textarea-input > .text-input {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <!-- Form with GET method -->
+    <form method="GET" action="https://http-echo-server.azurewebsites.net/api/HttpEchoDemo">
+        <input type="text" name="field1">
+        <input type="text" name="field2">
+        <input type="submit" value="Skicka form!">
+    </form>
+
+    <!-- Form with POST method-->
+    <form method="POST" action="https://http-echo-server.azurewebsites.net/api/HttpEchoDemo">
+        <input type="text" name="field1">
+        <input type="text" name="field2">
+        <input type="submit" value="Skicka form!">
+    </form>
+
+    <hr>
+
+    <!-- Example with label and various input fields -->
+    <form method="POST" action="https://http-echo-server.azurewebsites.net/api/HttpEchoDemo">
+        <!-- Variant 1 of using label. Wrap input in label -->
+        <label>
+            text:
+            <input type="text" name="text">
+        </label>
+        <br>
+        
+        <!-- Variant 2 of using label. Reference input on ID -->
+        <label for="email-field">email:</label>
+        <input type="email" name="email" id="email-field"><br>
+
+        <label>
+            Number:
+            <input type="number" name="number">
+        </label>
+        <br>
+
+        <label>
+            Password: 
+            <input type="password" name="password">
+        </label>
+        <br>
+
+        <label>
+            Time:
+            <input type="time" name="time">
+        </label>
+        <br>
+
+        <label>
+            Date:
+            <input type="date" name="date">
+        </label>
+        <br>
+
+        <label class="textarea-input">
+            Multiline text
+            <textarea name="textarea" class="text-input"></textarea>
+        </label>
+        <br>
+
+        <br>
+        <br>
+        <input type="submit" value="Skicka!">
+    </form>
+
+    <hr>
+
+    <!-- Checkboxes and radio buttons -->
+    <form method="POST" action="https://http-echo-server.azurewebsites.net/api/HttpEchoDemo">
+        <!-- Default value = 'on' -->
+        <label><input type="checkbox" name="cbox">Check me!</label>
+        <!-- Explicit value set by value attribute -->
+        <label><input type="checkbox" name="cbox2" value="free-stuff">Check me explicit value!</label>
+        
+        <!-- Same key is allowed. All values sent -->
+        <label><input type="checkbox" name="cbox" value="123">Option 1</label>
+        <label><input type="checkbox" name="cbox" value="456">Option 2</label>
+        <br>
+        <br>
+
+        <!-- Raido buttons = only one allowed-->
+        <label><input type="radio" name="radio">Radio option 1</label>
+        <label><input type="radio" name="radio">Radio option 2</label>
+        <br>
+
+        <!-- Mis configured radio button allows select all options -->
+        <label><input type="radio" name="radio1">Radio option 2</label>
+        <label><input type="radio" name="radio2">Radio option 2</label>
+
+        <br>
+        <br>
+        <input type="submit" value="Skicka!">
+    </form>
+    <br>
+    <br>
+
+    <hr>
+
+    <!-- Selects / dropdown -->
+    <form method="POST" action="https://http-echo-server.azurewebsites.net/api/HttpEchoDemo">
+        <!-- Single value -->
+        <select name="dropdown">
+            <!-- If value is set it is used in the submitted form -->
+            <option value="opt-1">Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option selected>Option 5</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Single value -->
+        <select name="multiple-dropdown" multiple size="10">
+            <!-- If value is set it is used in the submitted form -->
+            <option value="opt-1">Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option selected>Option 5</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Select with groups -->
+        <select name="dropdown-with-groups">
+            <optgroup label="Europe">
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </optgroup>
+            <optgroup label="Asia">
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </optgroup>
+        </select>
+
+        <br>
+        <br>
+        <input type="submit" value="Skicka!">
+    </form>
+    <br>
+    <hr>
+    <br>
+    <form method="POST" action="https://http-echo-server.azurewebsites.net/api/HttpEchoDemo">
+        <fieldset>
+            <legend>Fieldset 1</legend>
+            <input type="text" name="field1">
+            <input type="text" name="field2">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Fieldset 2</legend>
+            <input type="text" name="field3">
+        </fieldset>
+
+        <br>
+        <br>
+        <input type="submit" value="Skicka!">
+    </form>
+</body>
+</html>
