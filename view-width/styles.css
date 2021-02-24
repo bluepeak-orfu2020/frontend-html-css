@@ -1,0 +1,33 @@
+html, body { margin: 0; }
+* { box-sizing: border-box; }
+
+.container {
+  margin: 10px 0;
+  background-color: lightgrey;
+}
+
+.elem {
+  background-color: darkgoldenrod;
+  margin-bottom:2px;
+  padding: 5px;
+}
+
+.elem::before { padding-left: 10px; }
+.elem1::before { content: "100%"; }
+.elem2::before { content: "100vw"; }
+.elem3::before { content: "50%"; }
+.elem4::before { content: "50vw"; }
+
+.container::before {padding: 10px; display:inline-block; }
+.c1::before { content: "100%"; }
+.c2::before { content: "50%"; }
+
+/* Examples below */
+
+.c1 { width: 100%; }
+.c2 { width: 50%; }
+
+.elem1 { width: 100%; }
+.elem2 { width: 100vw; }
+.elem3 { width: 50%; }
+.elem4 { width: 50vw; }
