@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- x-descriptor example -->
+    <!-- <img src="srcset/bild.jpg" srcset="
+        srcset/bild.jpg 1x,
+        srcset/bild@2x.jpg 2x,
+        srcset/bild@3x.jpg 3x
+    "> -->
+
+    <!-- w-descriptor example -->
+    <!-- <img src="srcset/bild.jpg" srcset="
+        sizes/100x100.png 100w,
+        sizes/200x200.png 200w,
+        sizes/300x300.png 300w,
+        sizes/400x400.png 400w,
+        sizes/500x500.png 500w,
+        sizes/1000x1000.png 1000w
+    " sizes="
+        (max-width: 400px) 100vw,
+        25vw
+    "> -->
+
+    <picture>
+        <source media="(max-width: 400px)" srcset="
+            picture/small-214-214.jpg 214w,
+            picture/small-424-424.jpg 424w,
+        ">
+        <!-- <source srcset="webp-image.webp" type="image/webp"> -->
+
+        <img src="picture/large-500-320.jpg" srcset="
+            picture/large-500-320.jpg 500w,
+            picture/large-1000-640.jpg 1000w,
+        ">
+    </picture>
+</body>
+</html>
