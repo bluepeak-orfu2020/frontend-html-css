@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        body {
+            margin-bottom: 50px;
+        }
+        article, p {
+            border: 1px solid darkblue;
+            margin: 30px 0;
+        }
+
+        .p1 + .p {
+            color: red;
+        }
+
+        .p1 ~ .p {
+           margin-left: 10px; 
+        }
+
+        /* .s0 .s {
+            font-size: 1.5em;
+        } */
+
+        .s0 > .s {
+            font-size: 1.5em;
+        }
+
+        .a3 > .p0:hover {
+            color: yellowgreen;
+        }
+
+        .a3 > .p:not(.p0) {
+            color: tomato;
+        }
+
+        .a3 > .p:nth-child(even) {
+            font-size: 30px;
+        }
+
+        .text::before {
+            content: ">> ";
+        }
+        .text::after {
+            content: " <<";
+        }
+
+        .cb {
+            appearance: none;
+            outline: none;
+        }
+
+        .cb::before {
+            content: "O";
+        }
+
+        .cb:checked::before {
+            content: "X";
+        }
+
+        .list {
+            list-style-type: none;
+        }
+
+        .list > li {
+            position: relative;
+        }
+
+        .list > li::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            left: -15px;
+            top: calc(50% - 5px);
+            background-color: tomato;
+        }
+
+        .list > li:hover::before {
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <article class="a1">
+        <p class="p p0">00000000000000</p>
+        <p class="p p1">AAAAAAAAAAAAAA</p>
+        <p class="p p2">BBBBBBBBBBBBBB</p>
+        <p class="p p3">CCCCCCCCCCCCCC</p>
+    </article>
+
+    <article class="a2">
+        <p class="s0">
+            00000000000000
+            <span class="s">
+                AAAAAAAAAAAAAA
+                <span class="s">BBBBBBBBBBBBBB</span>
+            </span>
+        </p>
+    </article>
+
+    <article class="a3">
+        <p class="p p0">00000000000000</p>
+        <p class="p p1">AAAAAAAAAAAAAA</p>
+        <p class="p p2">BBBBBBBBBBBBBB</p>
+        <p class="p p3">CCCCCCCCCCCCCC</p>
+    </article>
+    
+    <article class="a4">
+        <span class="text">En text</span>
+    </article>
+
+
+    <form>
+        <label>
+            <input type="checkbox" class="cb">
+            Check me!
+        </label>
+    </form>
+
+    <nav>
+        <ul class="list">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </nav>
+</body>
+</html>
