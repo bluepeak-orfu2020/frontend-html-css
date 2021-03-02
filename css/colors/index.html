@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colors</title>
+  <style>
+    .box {
+      margin: 10px;
+      min-width: 50px;
+      height: 50px;
+      padding: 5px;
+      font-size: 30px;
+      color: hsl(90, 100%, 50%);
+    }
+
+    .b1 {
+      background-color: rgb(33, 122, 115);
+    }
+    .b2 {
+      background-color: hsl(111, 39%, 44%);
+    }
+    .c {
+      width: 200px;
+      font-size: 30px;
+      position: relative;
+    }
+
+    .b3 {
+      position: absolute;
+      left:0;
+      top: 0;
+      width: 50%;
+      background-color: rgba(0,255,0, 0.75);
+      margin: 0;
+    }
+    .b4 {
+      position: absolute;
+      right:0;
+      top: 0;
+      width: 50%;
+      background-color: hsla(240, 100%, 50%, 0.25);
+      margin: 0;
+    }
+    .b5 {
+      background: linear-gradient(
+        90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%
+      );
+    }
+  </style>
+</head>
+<body>
+  <div class="box b1">RGB</div>
+  <div class="box b2">HSL</div>
+  <div class="c">
+    aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa 
+    <div class="box b3">RGBa</div>
+    <div class="box b4">HSLa</div>
+  </div>
+  <div class="box b5"></div>
+</body>
+</html>
