@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+  <style>
+    :root {
+      --primary-color: deeppink;
+      --background-color: palegreen;
+      --util-color: yellow;
+    }
+
+    .p {
+      background-color: var(--background-color);
+
+      font-size: var(--my-var);
+    }
+    div {
+      background-color: var(--background-color);
+    }
+
+    .p1 {
+      width: 200px;
+      position: relative;
+      /* left: 50%;
+      margin-left: -100px; */
+      left: calc(50% - 100px);
+
+      --my-var: 50px;
+    }
+
+    .p2 {
+      --my-var: 100px;
+    }
+  </style>
+</head>
+<body>
+  <p class="p p1">P1 P1 P1 P1</p>
+  <p class="p p2">P2 P2 P2 P2</p>
+  <div class="">DIV 1 DIV 1 DIV 1 DIV 1 </div>
+</body>
+</html>
