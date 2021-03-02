@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .c {
+      display: flex;
+      width: 500px;
+      background-color: aquamarine;
+      outline: 2px solid maroon;
+    }
+    .i {
+      color: white;
+      font-weight: bold;
+      padding: 30px;
+    }
+    .i1 {
+      background-color: red;
+    }
+    .i2 {
+      background-color: green;
+    }
+    .i3 {
+      background-color: blue;
+    }
+
+    .c1 {
+      flex-direction: column;
+    }
+
+    .c2 > .i {
+      width: 240px;
+    }
+
+    .c2 {
+      flex-wrap: wrap;
+    }
+
+    .c3  {
+      justify-content: flex-start; /* default value */
+      justify-content: space-between;
+      justify-content: space-around;
+      justify-content: center;
+    }
+
+    .c4 {
+      height: 200px;
+      align-items: stretch; /* default value */
+      align-items: flex-start;
+      align-items: flex-end;
+      align-items: center;
+    }
+
+
+    .c5 {
+      height: 200px;
+      flex-wrap: wrap;
+      align-content: flex-start; /* default value */
+      align-content: center;
+      align-content: space-between;
+    }
+    .c5 > .i {
+      width: 240px;
+    }
+
+    .c6 > .i {
+      flex-grow: 1;
+    }
+
+    .c7 > .i {
+      width: 240px;
+      flex-shrink: 0;
+    }
+
+    .c8 > .i {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 150px;
+    }
+
+    .c9 > .i1 { width: 150px; }
+    .c9 > .i2 { width: 100px; }
+    .c9 > .i3 { width: 200px; }
+    .c9 > .i {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    .c10 {
+      flex-wrap: wrap;
+    }
+    .c10 > .i {
+      flex-basis: 50%;
+    }
+
+    .c11 > .i {
+      flex: 1 0 30%;
+    }
+
+    .c12 {
+      height: 200px;
+      align-items: flex-start;
+    }
+
+    .c12 > .i2 {
+      align-self: flex-end;
+    }
+
+
+  </style>
+</head>
+<body>
+  <h2>Flex-direction</h2>
+  <div class="c c1">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Flex-wrap</h2>
+  <div class="c c2">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Justift-content</h2>
+  <div class="c c3">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Align-items</h2>
+  <div class="c c4">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Align-content</h2>
+  <div class="c c5">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Flex-grow</h2>
+  <div class="c c6">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Flex-shink</h2>
+  <div class="c c7">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Flex-basis</h2>
+  <div class="c c8">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Flex-basis (even sizes)</h2>
+  <div class="c c9">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Flex-basis (wrap)</h2>
+  <div class="c c10">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Flex (shorthand)</h2>
+  <div class="c c11">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+
+  <h2>Align-self</h2>
+  <div class="c c12">
+    <span class="i i1">AAA</span>
+    <span class="i i2">BBB</span>
+    <span class="i i3">CCC</span>
+  </div>
+</body>
+</html>
