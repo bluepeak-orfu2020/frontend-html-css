@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid page</title>
+  <style>
+    html, body {
+      margin: 0;
+    }
+    .c {
+      display: grid;
+      min-height: 100px;
+    }
+
+    header {
+      background-color: antiquewhite;
+    }
+    main {
+      background-color: palegreen;
+    }
+    aside {
+      background-color: cornflowerblue;
+    }
+    footer {
+      background-color: teal;
+    }
+
+    .c1 {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50%;
+    }
+
+    .c2 {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50% 50%;
+    }
+
+    .c3 {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50%;
+    }
+
+    .c3 > aside {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .c3 > main {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .c4 {
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-rows: 50% 50%;
+    }
+
+    .c4 > header {
+      grid-column: 2 / -2;
+    }
+
+    .c5 {
+      grid-template-columns: [col-start] 50% [mid] 50% [col-end];
+      grid-template-rows: 50% 50%;
+    }
+
+    .c5 > footer {
+      grid-column: col-start / mid;
+      grid-row: 2 / 3;
+    }
+
+    .c5 > aside {
+      grid-column: mid / col-end;
+    }
+
+    .c6 {
+      grid-template-columns: 100px 1fr;
+      grid-template-rows: 2fr 1fr;
+    }
+
+    .c7 {
+      grid-template-columns: 100px minmax(500px, 1fr);
+      grid-template-rows: 2fr 1fr;
+    }
+
+    .c8 {
+      /* grid-template-columns: repeat(12, 1fr); */
+      grid-template-columns: repeat(6, 100px 1fr);
+      grid-template-rows: 1fr;
+    }
+
+    .c9 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+        "header header"
+        "main sidebar"
+        ". footer";
+    }
+
+    .c9 > header { grid-area: header; }
+    .c9 > main   { grid-area: main; }
+    .c9 > aside  { grid-area: sidebar; }
+    .c9 > footer { grid-area: footer; }
+
+    .c10 {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .c10 > header {
+      grid-column: 1 / span 9;
+    }
+
+    .c11 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+      column-gap: 20px;
+    }
+
+    .c12 {
+      grid-template-columns: 100px 100px;
+      grid-template-rows: 1fr 1fr;
+      justify-items: center;
+      justify-content: flex-end;
+    }
+
+    .c12 > header { align-self: flex-start; }
+    .c12 > main { align-self: center; }
+
+  </style>
+</head>
+<body>
+  <h2>Basic grid</h2>
+  <div class="c c1">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+  
+  <h2>Grid with empty cells</h2>
+  <div class="c c2">
+    <header>header</header>
+    <main>main</main>
+    <section>section 1</section>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Grid with placed items</h2>
+  <div class="c c3">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+
+  <h2>Grid-columsn with negative reference</h2>
+  <div class="c c4">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Named grid lines</h2>
+  <div class="c c5">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Sizes of cells</h2>
+  <div class="c c6">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Minmax</h2>
+  <div class="c c7">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Repeat</h2>
+  <div class="c c8">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Grid areas</h2>
+  <div class="c c9">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Grid span</h2>
+  <div class="c c10">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Grid span</h2>
+  <div class="c c11">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+  <h2>Grid span</h2>
+  <div class="c c12">
+    <header>header</header>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </div>
+
+</body>
+</html>
